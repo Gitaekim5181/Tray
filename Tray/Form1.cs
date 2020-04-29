@@ -17,7 +17,7 @@ namespace Tray
         Timer time = new Timer();
         
         public Form1()
-        {
+        {    
             InitializeComponent();
         }
 
