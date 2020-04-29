@@ -1,0 +1,11 @@
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\bin\Debug\Tray.exe.config
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\bin\Debug\Tray.exe
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\bin\Debug\Tray.pdb
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\obj\Debug\Tray.csprojAssemblyReference.cache
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\obj\Debug\Tray.Form1.resources
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\obj\Debug\Tray.Form2.resources
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\obj\Debug\Tray.Properties.Resources.resources
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\obj\Debug\Tray.csproj.GenerateResource.cache
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\obj\Debug\Tray.csproj.CoreCompileInputs.cache
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\obj\Debug\Tray.exe
+C:\Users\DTOL\Desktop\bowlingTest\Tray\Tray\Tray\obj\Debug\Tray.pdb
