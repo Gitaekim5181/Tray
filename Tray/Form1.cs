@@ -15,7 +15,7 @@ namespace Tray
     public partial class Form1 : Form
     {
         Timer time = new Timer();
-        
+
         public Form1()
         {    
             InitializeComponent();
@@ -25,13 +25,22 @@ namespace Tray
         {
 
             time.Tick -= time_t;
-            this.WindowState = FormWindowState.Minimized;
 
-            time.Enabled = true;
-            time.Interval = Convert.ToInt32(textBox1.Text) * 60 * 1000;
-            time.Start();
-            time.Tick += time_t;
-            
+            if (textBox1.Text==null || textBox1.Text.Trim()=="")
+            {
+                MessageBox.Show("알람 시간을 설정 바랍니다.");
+
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Minimized;
+                time.Enabled = true;
+                time.Interval = Convert.ToInt32(textBox1.Text) * 60 * 1000;
+                time.Start();
+                time.Tick += time_t;
+            }
+           
+
 
         }
         private void time_t(object sender, EventArgs e)
@@ -94,6 +103,15 @@ namespace Tray
             Show();
             this.WindowState = FormWindowState.Normal;
             notifyIcon1.Visible = false;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+         
         }
     }
 }
