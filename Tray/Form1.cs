@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-    
+using System.Windows.Forms.VisualStyles;
 
 namespace Tray
 {
@@ -25,7 +25,7 @@ namespace Tray
 
             time.Tick -= time_t;
              
-            if (textBox1.Text==null || textBox1.Text.Trim()=="")
+            if (textBox1.Text==null || textBox1.Text.Trim()=="" || textBox1.Text.Trim() =="0")
             {
                 MessageBox.Show("알람 시간을 설정 바랍니다.");
 
@@ -109,6 +109,25 @@ namespace Tray
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
             {
                 e.Handled = true;
+                if(e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    button1.PerformClick();
+                }
+                else if (e.KeyChar == Convert.ToChar(Keys.Escape))
+                {
+                    if (MessageBox.Show("시스템을 종료하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.No)
+                    {
+                        //NO일때
+                        MessageBox.Show("취소 하셨습니다.!!","취소");
+                        textBox1.Focus();
+
+                    }
+                    else
+                    {
+                        Application.Exit();  //YES일때
+                    }
+                    
+                }
             }
          
         }
