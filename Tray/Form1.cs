@@ -24,7 +24,7 @@ namespace Tray
         {
 
             time.Tick -= time_t;
-
+             
             if (textBox1.Text==null || textBox1.Text.Trim()=="")
             {
                 MessageBox.Show("알람 시간을 설정 바랍니다.");
