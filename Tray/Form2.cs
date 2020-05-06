@@ -24,7 +24,6 @@ namespace Tray
             this.DialogResult = DialogResult.OK;
             Close();
           
-
         }
     }
 }
