@@ -14,7 +14,7 @@ namespace Tray
     public partial class Form1 : Form
     {
         Timer time = new Timer();
-
+        
         public Form1()
         {    
             InitializeComponent();
@@ -111,6 +111,12 @@ namespace Tray
                 e.Handled = true;
             }
          
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox1;
+            textBox1.Focus();
         }
     }
 }
