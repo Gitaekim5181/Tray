@@ -19,7 +19,6 @@ namespace Tray
         {    
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -39,8 +38,6 @@ namespace Tray
                 time.Tick += time_t;
             }
            
-
-
         }
         private void time_t(object sender, EventArgs e)
         {
@@ -54,7 +51,6 @@ namespace Tray
                 frm_Start();
             }
             
-
         }
         private void Form1_Resize()
         {
@@ -65,34 +61,27 @@ namespace Tray
 
             }
         }
-
-
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             frm_Start();
         }
-
         private void Form1_Resize(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
             {
                 Hide();
                 notifyIcon1.Visible = true;
-
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             //Close();
             Application.Exit();
         }
-
         private void 열기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_Start();
         }
-
         private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -103,7 +92,6 @@ namespace Tray
             this.WindowState = FormWindowState.Normal;
             notifyIcon1.Visible = false;
         }
-
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
@@ -131,7 +119,6 @@ namespace Tray
             }
          
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ActiveControl = textBox1;
