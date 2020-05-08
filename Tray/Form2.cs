@@ -32,7 +32,7 @@ namespace Tray
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bnt(sender, e);
+            bnt(null, null);
             this.Close();
         }   
     

@@ -14,7 +14,9 @@ namespace Tray
     public partial class Form1 : Form
     {
         Timer time = new Timer();
-        
+        Timer time_start = new Timer();
+        DateTime start;
+
         public Form1()
         {    
             InitializeComponent();
@@ -26,18 +28,26 @@ namespace Tray
            
             if (textBox1.Text==null || textBox1.Text.Trim()=="" || textBox1.Text.Trim() =="0")
             {
-                MessageBox.Show("알람 시간을 설정 바랍니다.");
+
+                MessageBox.Show("알람 시간 Default 50분으로 진행 합니다.");
+                textBox1.Text = "50";
             }
-            else
-            {
-                this.WindowState = FormWindowState.Minimized;
-                time.Enabled = true;
-                time.Interval = Convert.ToInt32(textBox1.Text) * 60 * 1000;
-                time.Start();
-                label4.Visible = true;
-                time.Tick += time_t;
-            }
-           
+            
+            this.WindowState = FormWindowState.Minimized;
+            time.Enabled = true;
+            time.Interval = Convert.ToInt32(textBox1.Text) * 60 * 1000;
+            time.Start();
+            label4.Visible = true;
+            label5.Visible = true;
+            label6.Visible = true;
+            time.Tick += time_t;
+            
+            start = DateTime.Now.AddMilliseconds(time.Interval);
+            time_start.Enabled = true;
+            time_start.Interval = 1000;
+            time_start.Start();
+            time_start.Tick += time_starting;
+
         }
 
         private void time_t(object sender, EventArgs e)
@@ -45,6 +55,8 @@ namespace Tray
             
             time.Stop();
             label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
             Form2 form2 = new Form2();
             time.Tick -= time_t;
             form2.bnt += new bnt1(button1_Click);
@@ -54,6 +66,11 @@ namespace Tray
                 frm_Start();
             }
 
+        }
+        private void time_starting(object sender, EventArgs e)
+        {
+            TimeSpan time_Result = start - DateTime.Now;
+            label5.Text = time_Result.ToString(@"hh\:mm\:ss") + " 후 알람";
         }
         private void Form1_Resize()
         {
@@ -125,6 +142,8 @@ namespace Tray
             textBox1.Focus();
             textBox1.Select(int.Parse(textBox1.Text),0);
             label4.Visible = false;
+            label5.Visible = false;
+            label6.Visible = false;
 
         }
         private void End()
@@ -149,14 +168,55 @@ namespace Tray
         private void 시작ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBox1.Text = "50";
-            button1_Click(sender, e);
+            button1_Click(null, null);
 
         }
 
         private void 재시작ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "50";
-            button1_Click(sender, e);
+            if(time.Enabled==true)
+            {
+                if(MessageBox.Show("알람이 진행 중 입니다 그래도 재시작 하시겠습니까?", "재시작", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    textBox1.Text = textBox1.Text;
+                    button1_Click(null, null);
+                }
+
+            }
+            else
+            {
+                textBox1.Text = "50";
+                button1_Click(null, null);
+            }
+            
+        }
+
+        private void 휴식ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           if(time.Enabled==true)
+           {
+                if (MessageBox.Show("휴식(10분) 알람을 진행 하시겠습니까?", "휴식(10분)", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+                else
+                {
+                    textBox1.Text = "10";
+                    button1_Click(null, null);
+                }
+           }
+           else
+           {
+              
+              textBox1.Text = "10";
+              button1_Click(null, null);
+
+           }
+
         }
     }
 }
