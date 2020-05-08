@@ -25,7 +25,7 @@ namespace Tray
         {
 
             time.Tick -= time_t;
-           
+            time_start.Tick -= time_starting;
             if (textBox1.Text==null || textBox1.Text.Trim()=="" || textBox1.Text.Trim() =="0")
             {
 
