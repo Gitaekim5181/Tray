@@ -39,7 +39,7 @@ namespace Tray
             time.Start();
             label4.Visible = true;
             label5.Visible = true;
-            label6.Visible = true;
+            label6.Visible = true;  
             time.Tick += time_t;
             
             start = DateTime.Now.AddMilliseconds(time.Interval);
