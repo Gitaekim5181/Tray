@@ -124,6 +124,20 @@ namespace Tray
                 e.Handled = true;
                 if(e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
+                     if(time.Enabled==true)
+            {
+                if(MessageBox.Show("알람이 진행 중 입니다 그래도 재시작 하시겠습니까?", "재시작", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                     this.WindowState = FormWindowState.Minimized;
+                     return;
+                }
+                else
+                {
+                    textBox1.Text = textBox1.Text;
+                    button1_Click(null, null);
+                }
+
+            }
                     button1.PerformClick();
                 }
                 else if (e.KeyChar == Convert.ToChar(Keys.Escape))
