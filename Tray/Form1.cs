@@ -225,7 +225,6 @@ namespace Tray
            }
            else
            {
-              
               textBox1.Text = "10";
               button1_Click(null, null);
 

@@ -32,7 +32,7 @@ namespace Tray
         {
             bnt(null, null);
             this.Close();
-        }   
+        }      
     
     }
 }
