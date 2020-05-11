@@ -36,6 +36,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.열기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.시작ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.휴식ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.재시작ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.휴식ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,6 +106,13 @@
             this.시작ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.시작ToolStripMenuItem.Text = "시작(50분)";
             this.시작ToolStripMenuItem.Click += new System.EventHandler(this.시작ToolStripMenuItem_Click);
+            // 
+            // 휴식ToolStripMenuItem1
+            // 
+            this.휴식ToolStripMenuItem1.Name = "휴식ToolStripMenuItem1";
+            this.휴식ToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+            this.휴식ToolStripMenuItem1.Text = "휴식(10분)";
+            this.휴식ToolStripMenuItem1.Click += new System.EventHandler(this.휴식ToolStripMenuItem1_Click);
             // 
             // 재시작ToolStripMenuItem
             // 
@@ -194,18 +201,11 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "타이머진행 :";
             // 
-            // 휴식ToolStripMenuItem1
-            // 
-            this.휴식ToolStripMenuItem1.Name = "휴식ToolStripMenuItem1";
-            this.휴식ToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
-            this.휴식ToolStripMenuItem1.Text = "휴식(10분)";
-            this.휴식ToolStripMenuItem1.Click += new System.EventHandler(this.휴식ToolStripMenuItem1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 183);
+            this.ClientSize = new System.Drawing.Size(327, 159);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
